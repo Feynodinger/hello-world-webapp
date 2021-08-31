@@ -14,8 +14,8 @@ pipeline {
             stage('Deploy') {
         steps {
 		script {
-          		withDockerRegistry(credentialsId: 'dockerhub-ayush-personal', toolName: 'docker') {
-            		def image = docker.build("Feynodinger/echo-server:$BUILD_NUMBER")
+          		withDockerRegistry(credentialsId: 'decker-cosmiccurve', toolName: 'docker') {
+            		def image = docker.build("thecosmologicalcurvedecker/decker-server:$BUILD_NUMBER")
             		image.push()
           		}
         	}
